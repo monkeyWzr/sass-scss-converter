@@ -3,11 +3,19 @@
   "version": "1.0.0",
   "private": true,
   "devDependencies": {
+    "@babel/core": "^7.14.6",
+    "@babel/preset-env": "^7.14.7",
+    "@babel/preset-typescript": "^7.14.5",
+    "@types/jest": "^26.0.23",
     "@types/node": "^15.12.4",
     "@types/yargs": "^17.0.0",
     "@typescript-eslint/eslint-plugin": "^4.28.0",
     "@typescript-eslint/parser": "^4.28.0",
+    "babel-jest": "^27.0.6",
     "eslint": "^7.29.0",
+    "execa": "^5.1.1",
+    "jest": "^27.0.6",
+    "ts-node": "^10.0.0",
     "typescript": "^4.3.4"
   },
   "dependencies": {
@@ -17,10 +25,11 @@
     "yargs": "^17.0.1"
   },
   "scripts": {
-    "build": "tsc && chmod +x dist/index.js",
-    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx"
+    "build": "tsc && chmod +x dist/cli.js",
+    "lint": "eslint src/ --ext .js,.jsx,.ts,.tsx",
+    "test": "yarn run build && jest"
   },
   "bin": {
-    "ssc": "dist/index.js"
+    "ssc": "dist/cli.js"
   }
 }
